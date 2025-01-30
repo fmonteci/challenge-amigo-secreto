@@ -8,15 +8,24 @@ let inputAmigo =""
 inputAmigo=document.getElementById("amigo").value;
 if (inputAmigo==""){
     alert("Por favor, inserte un nombre");
-} else {
+} else { //añade el amigo y actualiza la lista de amigosgit
     listadoAmigos.push(inputAmigo);
     document.getElementById("amigo").value="";
+    actualizarAmigo();
 }
 
 console.log(listadoAmigos)
 }
 
+//funcion para generar listado de amigos a mostrar
 function actualizarAmigo(){
+let amigosAgregados=document.getElementById("listaAmigos");
+amigosAgregados.innerHTML="";
+for (var i=0; i<listadoAmigos.length; i++) {
+    let nuevoElemento=document.createElement("li");
+    nuevoElemento.textContent=listadoAmigos[i]
+    amigosAgregados.appendChild(nuevoElemento)
+}
 
 
 }
