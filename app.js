@@ -17,14 +17,31 @@ if (inputAmigo==""){
 console.log(listadoAmigos)
 }
 
-//funcion para generar listado de amigos a mostrar
+//funcion gpara generar listado de amigos a mostrar
 function actualizarAmigo(){
 let amigosAgregados=document.getElementById("listaAmigos");
 amigosAgregados.innerHTML="";
 for (var i=0; i<listadoAmigos.length; i++) {
     let nuevoElemento=document.createElement("li");
-    nuevoElemento.textContent=listadoAmigos[i]
-    amigosAgregados.appendChild(nuevoElemento)
+    nuevoElemento.textContent=listadoAmigos[i];
+    amigosAgregados.appendChild(nuevoElemento);
+}
+
+}
+
+function sortearAmigo() {
+let resultado=document.getElementById("resultado");
+resultado.innerHTML="";
+let amigosAgregados=document.getElementById("listaAmigos");
+amigosAgregados.innerHTML="";
+if(listadoAmigos.length==0){
+alert("No existen amigos para sortear");
+//break
+} else{
+let numeroAleatorio=parseInt(Math.floor(Math.random(10)))+1;
+let amigoSecreto=document.createElement("li");
+amigoSecreto.textContent=listadoAmigos[numeroAleatorio];
+resultado.appendChild(amigoSecreto);
 }
 
 
